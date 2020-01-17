@@ -1,14 +1,14 @@
 stage ("Build") {
     node (){
         echo 'building the artifact'
-        sleep 10
+        sleep 5
             }        
           }    
 
 stage ("QA Test") {
    node () {
         echo "QA tests..."
-        sleep 10
+        sleep 5
     } 
   }
 
@@ -16,6 +16,6 @@ stage ("Deploy") {
    node () {
         input 'Deploy on load test environment?'
         echo "deploying to test environment."
-        sleep 10
+        sleep 5
   } 
 }
