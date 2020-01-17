@@ -1,0 +1,19 @@
+stage ("Build") {
+  timeout(time: 1, unit: 'MINUTES'){
+    node (){
+                echo 'building the artifact'
+                sleep 1000
+            }        }    
+  }
+stage ("QA Test") {
+   node () {
+        echo "QA tests..."
+        sleep 10
+    } }
+stage ("Deploy") {
+    timeout(time: 1, unit: 'MINUTES'){
+        input 'Deploy on load test environment?'
+        echo "deploying to test environment."
+        sleep 10
+    }
+  } 
