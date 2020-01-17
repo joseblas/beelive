@@ -1,5 +1,5 @@
 stage ("Build") {
-  timeout(time: 1, unit: 'MINUTES'){
+  timeout(time: 30, unit: 'SECONDS'){
     node (){
         echo 'building the artifact'
         sleep 1000
