@@ -1,7 +1,7 @@
 stage ("Build") {
     node (){
         echo 'building the artifact'
-        sleep 5
+        sleep 2
             }        
           }    
 
@@ -9,8 +9,16 @@ stage ("QA Test") {
    node () {
     timeout(time: 5, unit: 'MINUTES'){
         echo "QA tests..."
-        sleep 5
+        sleep 2
        }
+    } 
+  }
+
+stage ("Perf Test") {
+   node () {
+        input 'execute perf Tests?'
+        echo "executing Performance tests"
+        sleep 2
     } 
   }
 
@@ -20,6 +28,6 @@ stage ("Deploy") {
             input 'Deploy on load test environment?'
             echo "deploying to test environment."
          }
-        sleep 5
+        sleep 2
   } 
 }
