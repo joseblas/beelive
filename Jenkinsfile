@@ -7,8 +7,10 @@ stage ("Build") {
 
 stage ("QA Test") {
    node () {
+    timeout(time: 1, unit: 'DAYS'){
         echo "QA tests..."
         sleep 5
+       }
     } 
   }
 
