@@ -7,7 +7,7 @@ stage ("Build") {
 
 stage ("QA Test") {
    node () {
-    timeout(time: 1, unit: 'DAYS'){
+    timeout(time: 5, unit: 'MINUTES'){
         echo "QA tests..."
         sleep 5
        }
@@ -16,8 +16,10 @@ stage ("QA Test") {
 
 stage ("Deploy") {
    node () {
-        input 'Deploy on load test environment?'
-        echo "deploying to test environment."
+        timeout(time: 5, unit: 'MINUTES'){
+            input 'Deploy on load test environment?'
+            echo "deploying to test environment."
+         }
         sleep 5
   } 
 }
